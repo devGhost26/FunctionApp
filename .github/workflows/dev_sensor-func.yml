@@ -8,7 +8,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '8.0' # ensure you are using a valid .NET version
+  DOTNET_VERSION: '8.0.x' # ensure you are using a valid .NET version
 
 jobs:
   build-and-deploy:
@@ -46,4 +46,5 @@ jobs:
         with:
           app-name: 'sensor-func'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+
